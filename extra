@@ -1,0 +1,67 @@
+Async, SingleThread, Non Blocking I/O langugae
+
+callback
+
+  =  |  <-->
+  =  | 
+=  |<-->
+    ==|<-->
+=|
+    |
+    |
+    |
+
+Inbuilt
+Api (crud)
+FullStack with node
+JWT
+Redis
+Transpile 
+MongoDB
+---------
+Docker
+Nginx
+--------
+=>Routing
+=>Forms Angular
+
+MEAN
+
+----------------
+/***************
+    Step For Package.json
+**************/
+> Navigate to folder using cmd/terminal
+> npm init
+> Answer all questions
+> type 'yes'
+
+//Local Depedency
+//Global
+
+/***************
+    Step For local pacakge
+**************/
+> Navigate to folder using cmd/terminal
+> npm i body-parser
+/ npm install body-parser
+/ npm i body-parser --save
+/ npm i mocha --save-dev
+
+/***************
+    Step For global pacakge
+**************/
+Win
+> Run cmd as  admin
+> npm i -g @aakashdeveloper/create-node-app
+
+Mac/Linux
+> Open terminal
+> sudo npm i -g @aakashdeveloper/create-node-app
+
+java => tomact
+.net => IIS
+php  => xamp
+node => create own server
+
+express
