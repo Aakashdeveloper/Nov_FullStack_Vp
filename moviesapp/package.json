@@ -1,0 +1,20 @@
+{
+  "name": "moviesapp",
+  "version": "1.0.0",
+  "description": "this is movies app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "ejs"
+  ],
+  "author": "visualpath",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.2",
+    "express": "^4.17.1"
+  }
+}

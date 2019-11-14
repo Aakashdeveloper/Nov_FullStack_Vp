@@ -65,3 +65,8 @@ php  => xamp
 node => create own server
 
 express
+
+crud
+
+///////
+npm i -g nodemon
