@@ -70,3 +70,76 @@ crud
 
 ///////
 npm i -g nodemon
+
+
+https://ngapi4.herokuapp.com/api/getProducts
+
+
+//////////Mongo//////////
+https://www.mongodb.com/what-is-mongodb
+port: 27017
+
+> C:\data\db
+> mongod
+> mongo
+
+
+NoSql => Its not a sql 
+
+| Sno | Hindi | English |
+-------------------------
+| 1   |  80   |         |
+| 2   |       |   80    |
+
+[
+    {
+        sno:1
+        hindi:80
+    },
+    {
+        sno:2
+        english:80
+    }
+]
+Sql           NoSql
+database      database
+table         collections
+row           document
+
+
+1 = true
+0 = false
+
+show dbs
+use classdatabase
+show collections
+db.movies.find().pretty()
+db.movies.find({rate:4.5,language:"HINDI"}).pretty()
+db.movies.find({rate:4.5},{name:1,language:1,_id:0}).pretty()
+db.movies.find({rate:4.5},{_id:0}).pretty()
+
+https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/
+
+db.mydata.insert({"name":"john",class:"ui"})
+db.mydata.insertMany(
+    [{"name":"eva",class:"mongo"},
+    {"name":"nick",class:"node"},
+    {"name":"dany",class:"react"}]
+)
+
+db.firscol.remove({})
+
+db.mydata.update({name:"katty"},
+                {
+                    $set:{name:"katty",class:"AWS"}
+                },
+                {upsert:true})
+
+up      sert
+update insert
+
+
+C=> insert
+R=> find
+U=> update
+D=> remove
