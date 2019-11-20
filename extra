@@ -143,3 +143,25 @@ C=> insert
 R=> find
 U=> update
 D=> remove
+
+
+
+function add(a,b){
+    return a+b
+}
+
+var add = (a,b) => { return a+b}
+
+
+var a = 10
+var b = "my age is "+a
+var c = `my age is ${a}`
+
+module.exports
+export default
+
+npm i @babel/core @babel/register @babel/preset-env
+
+
+4200
+7800
