@@ -33,6 +33,36 @@ app.post('/addProduct',(req,res)=> {
         })
 })
 
+app.put('/updateProduct',(req,res) => {
+    db.collection(col_name).findOneAndUpdate({"productName":req.body.productName},{
+        $set:{
+            productId:req.body.productId,
+            productName:req.body.productName,
+            productCode:req.body.productCode,
+            releaseDate:req.body.releaseDate,
+            description:req.body.description,
+            price:req.body.price,
+            starRating:req.body.starRating,
+            imageUrl:req.body.imageUrl,
+            }
+        },{
+            upsert:true
+        },(err,result)=>{
+            if(err) throw err;
+            res.send('data updated')
+        })
+})
+
+app.delete('/deleteProduct',(req,res) => {
+    db.collection(col_name).findOneAndDelete({
+        "productName":req.body.productName
+    },(err,result) => {
+        if(err) throw err;
+        res.send('Data Deleted')
+    })
+})
+
+
 
 MongoClient.connect(mongourl,(err,client) => {
     if(err) throw err;

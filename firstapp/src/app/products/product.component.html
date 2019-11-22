@@ -1,0 +1,72 @@
+<h3 [ngStyle]="{color:getColor()}"
+    [ngClass]="{online: serverStatus === 'Online'}">
+    Server status is {{serverStatus}}
+</h3>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="panel panel-body">
+        <div class="row">
+            <div class="col-md-2">
+                Filter
+            </div>
+            <div class="col-md-4">
+                <input  placeholder="Enter Your Search"
+                [(ngModel)]="userInput"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Number of Product filtered on basis of {{userInput}} is :
+                    {{(products | productsearch:userInput).length}}
+                </h4>
+            </div>
+        </div>
+        <table class="table table-responsive" *ngIf="products && products.length; else noData">
+            <thead>
+                <tr>
+                    <th>
+                        <button type="button"
+                                class="btn btn-success"
+                                (click)="toggleImage()">
+                            Show Image
+                        </button>
+                    </th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Star Rating</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let prod of products | productsearch:userInput ">
+                    <td>
+                        <img [src]="prod.imageUrl"
+                            [style.width.px]="imageWidth"
+                             *ngIf="showImage">
+                    </td>
+                    <td>
+                        <a [routerLink]="['/product', prod.productId]">
+                            {{prod.productName | myUpperCase:'upper'}}
+                        </a>
+                    </td>
+                    <td>{{prod.productCode | myUpperCase:'lower'}}</td>
+                    <td>{{prod.releaseDate | date}}</td>
+                    <td [ngStyle]="{'background-color':prod.price<20?'tomato':'skyblue'}">
+                        {{prod.price | discount:5  | currency:'GBP'  }}
+                    </td>
+                    <td>
+                        <app-star [rating]="prod.starRating"
+                        (ratingClicked)="onDataRecive($event)"></app-star>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #noData>
+            <img src="../../assets/loading.gif"/>
+        </ng-template>
+    </div>
+</div>
