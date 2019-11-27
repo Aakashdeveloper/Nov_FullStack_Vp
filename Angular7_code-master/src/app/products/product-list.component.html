@@ -55,7 +55,8 @@
                                     [style.margin.px]='imageMargin'/>
                             </td>
                             <td>
-                                <a [routerLink]="['/product', product.productId]" >
+                                <a [routerLink]="['/product', product.productId]"
+                                    >
                                     {{ product.productName | uppercase}}
                                 </a>
                             </td>
@@ -75,3 +76,9 @@
         </div>
     </div>
 </div>
+
+
+<!--
+    [queryParams]="{name:product.productName, img:product.imageUrl,
+                                    details:product.description}" 
+-->
