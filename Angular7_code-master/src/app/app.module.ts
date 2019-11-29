@@ -12,6 +12,7 @@ import { ProductModule } from './products/product.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsComponent } from './forms/forms.component';
 import { ReactiveFormsModule} from '@angular/forms';
+import { FormService } from './forms/form.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,11 +3,14 @@ import express from 'express';
 import mongo from 'mongodb';
 const MongoClient = mongo.MongoClient;
 import bodyParser from 'body-parser';
-const mongourl = "mongodb://127.0.0.1:27017/"
+const mongourl = "mongodb://127.0.0.1:27017/";
+import cors from 'cors';
 let db;
 const col_name="myproduct"
 var app = express();
 const port = 7800;
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
@@ -28,6 +31,7 @@ app.post('/addProduct',(req,res)=> {
             if(err){
                 res.status(401)
             }else{
+                
                 res.send('Data Added')
             }
         })
